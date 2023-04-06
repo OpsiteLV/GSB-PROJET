@@ -8,9 +8,7 @@ import com.bumptech.glide.Glide
 import com.mindorks.retrofit.coroutines.R
 import com.mindorks.retrofit.coroutines.data.model.User
 import com.mindorks.retrofit.coroutines.ui.main.adapter.MainAdapter.DataViewHolder
-import kotlinx.android.synthetic.main.item_layout.view.imageViewAvatar
-import kotlinx.android.synthetic.main.item_layout.view.textViewUserEmail
-import kotlinx.android.synthetic.main.item_layout.view.textViewUserName
+import kotlinx.android.synthetic.main.item_layout.view.*
 
 class MainAdapter(private val users: ArrayList<User>) : RecyclerView.Adapter<DataViewHolder>() {
 
@@ -18,11 +16,13 @@ class MainAdapter(private val users: ArrayList<User>) : RecyclerView.Adapter<Dat
 
         fun bind(user: User) {
             itemView.apply {
-                textViewUserName.text = user.name
-                textViewUserEmail.text = user.email
-                Glide.with(imageViewAvatar.context)
-                    .load(user.avatar)
-                    .into(imageViewAvatar)
+                textViewUserIdVisiteur.text = user.idVisiteur
+                textViewUserMois.text = user.mois.toString().substring(4)
+                textViewUserNbJustificatifs.text = (user.nbJustificatifs.toString())
+                textViewUserMontantValide.text = user.montantValide.toString()
+                textViewUserDateModif.text = user.dateModif.toString()
+                textViewUserIdEtat.text = user.idEtat
+
             }
         }
     }

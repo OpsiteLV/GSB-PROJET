@@ -1,8 +1,12 @@
 package com.mindorks.retrofit.coroutines.data.model
 
+import java.util.*
+
 data class User(
-    val avatar: String,
-    val email: String,
-    val id: String,
-    val name: String
+    val idVisiteur: String,
+    val mois: Int,
+    val nbJustificatifs: Int,
+    val montantValide: Float,
+    val dateModif: Date,
+    val idEtat: String
 )

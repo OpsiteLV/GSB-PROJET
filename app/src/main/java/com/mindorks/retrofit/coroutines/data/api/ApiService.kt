@@ -5,7 +5,7 @@ import retrofit2.http.GET
 
 interface ApiService {
 
-    @GET("users")
+    @GET("read.php")
     suspend fun getUsers(): List<User>
 
 }
